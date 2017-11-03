@@ -1,9 +1,17 @@
 <% content_for(:title_tag) do %>
-  Edit <%= @cocktail.name %>
+Edit <%= @cocktail.name %>
 <% end %>
 
-<h1>Cocktail update</h1>
-<p>Update the cocktail</p>
+<div class="container">
+  <h1>Cocktail update</h1>
+  <div class="row">
 
-<%= render 'form', cocktail: @cocktail %>
-<%= link_to 'Back', cocktails_path %>
+    <div class="col-xs-12-- col-lg-offset-3 col-lg-6 ">
+      <%= render 'form', cocktail: @cocktail %>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= link_to 'Back', cocktails_path %>
+  </div>
+</div>

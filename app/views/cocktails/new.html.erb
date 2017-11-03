@@ -1,9 +1,11 @@
-<% content_for(:title_tag) do %>
+<div class="container">
+  <% content_for(:title_tag) do %>
   Create your cocktail
-<% end %>
+  <% end %>
 
-<h1>Cocktail new</h1>
-<p>Create a new cocktail - be creative</p>
+  <h1>Cocktail new</h1>
+  <p>Create a new cocktail - be creative</p>
 
-<%= render 'cocktails/form', cocktail: @cocktail %>
-<%= link_to 'Back', cocktails_path %>
+  <%= render 'cocktails/form', cocktail: @cocktail %>
+  <%= link_to 'Back', cocktails_path %>
+</div>
