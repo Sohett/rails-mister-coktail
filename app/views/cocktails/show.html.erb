@@ -1,11 +1,15 @@
+<% content_for(:title_tag) do %>
+  <%= @cocktail.name.capitalize %>
+<% end %>
+
 <h1 class="text-center"><%= @cocktail.name.capitalize %> </h1>
 
 <ul>
-  <% @doses.each do |dose| %>
+  <% @cocktail.doses.each do |dose| %>
   <li>
     <%= dose.description %>
     <%= dose.ingredient.name %>
-    <%= link_to "delete this dose", dose_path(dose.id), method: :delete, class: "btn btn-danger", style: "margin: 5px" %>
+    <%= link_to "delete this dose", dose_path(dose.id), {class: "btn btn-danger", method: :delete,} %>
   </li>
   <% end %>
 </ul>
@@ -27,7 +31,7 @@
       </div>
     </div>
 
-    <div class="form-actions">
+    <div class="form-actions text-center">
       <%= f.button :submit %>
     </div>
     <% end %>
@@ -35,7 +39,7 @@
 </div>
 
 <row>
-  <div class="col-xs-12 col-md-6">
-    <%= link_to 'Back', cocktails_path, class: "btn btn-primary", style: "margin: 5px" %>
+  <div class="container">
+    <%= link_to 'Back', cocktails_path, {class: "btn btn-primary", style: "margin: 5px"} %>
   </div>
 </row>
